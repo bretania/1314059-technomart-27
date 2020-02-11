@@ -14,6 +14,10 @@ a {
     text-decoration: none;
 }
 
+.header-page {
+    background: #f4f7f9;
+}
+
 .header-top,
 .header-top .search,
 .search input,
@@ -27,10 +31,39 @@ a {
     background-color: #293449;
 }
 
+.search::before {
+    content:"";
+    background: url("../img/icon-search.svg") no-repeat;
+    opacity: 0.3;
+}
+.basket::before {
+    content:"";
+    background: url("../img/cart-icon.svg") no-repeat;
+    background-color: 0.3;
+}
+
+.bookmark::before {
+    content:"";
+    background: url("../img/icon-bookmark.svg") no-repeat;
+    background-color: 0.3;
+}
+
 .header-top .search:hover,
 .header-top .basket:hover,
 .header-top .bookmark:hover {
     background-color: #212a3a;
+}
+
+.header-top .search:hover {
+
+}
+
+.header-top .basket:active,
+.header-top .bookmark:active {
+    color: rgba(255,255,255, 0.6);
+
+    background-color: #161d29;
+    opacity:0.6;
 }
 
 .header-top .active {
@@ -47,6 +80,12 @@ a {
     background-color: #5fbb2d;
 }
 
+.header-top .button-order:active {
+    color: rgba(255,255,255, 0.6);
+
+    background-color: #518534;
+}
+
 .header-logo,
 .footer-logo {
     background-color: #ee3643;
@@ -54,6 +93,10 @@ a {
 
 .header-logo:hover {
     background-color: #ca2c37;
+}
+
+.header-logo:active {
+    background-color: #ba2732;
 }
 
 .slogan {
@@ -69,6 +112,7 @@ a {
     color: #ee3643;
 
     background-color: #f4f7f9;
+    background: url("../img/icon-phone.svg") no-repeat;
 }
 
 .header-address {
@@ -103,6 +147,16 @@ a {
 
 .login-out {
     font-size: 0px;
+
+    background: url("../img/icon-logout.svg") no-repeat;
+}
+
+.user {
+    background: url("../img/icon-user.svg") no-repeat;
+}
+
+.login-link {
+    background: url("../img/login.svg") no-repeat;
 }
 
 .header-user-nav a {
@@ -117,6 +171,19 @@ a {
     color: #ee3643;
 }
 
+.header-login-nav button:active,
+.header-user-nav a:active {
+    color: rgba(0,0,0, 0.3);
+}
+
+.header-user {
+    background-color: #f4f7f9;
+}
+
+.header-navigation {
+    background-color: #32425c;
+}
+
 .site-navigation a {
     font-size: 17px;
     line-height: 17px;
@@ -129,6 +196,11 @@ a {
     background-color: #293449;
 }
 
+.site-navigation a:active {
+    color: rgba(255,255,255, 0.5);
+    background-color: #1d2739;
+}
+
 .catalog,
 .catalog a 
 .catalog button{
@@ -136,23 +208,28 @@ a {
     color: #000000;
 }
 
-.catalog .breadcrumbs-list {
+.breadcrumbs-list a,
+.breadcrumbs-list li:last-child {
     font-size: 13px;
     line-height: 18px;
     text-transform: uppercase;
     color: #000000;
 }
 
-.breadcrumbs-list li:first-child {
+.breadcrumbs-list .home {
     font-size: 0px;
+    background: url("../img/icon-home.svg") #ffffff no-repeat;
 }
 
 h1 {
     font-family: "Cuprum", "PT Sans", Arial, sans-serif;
     font-size: 30px;
     line-height: 30px;
+    font-weight: normal;
     text-transform: uppercase;
     color: #32425c;
+
+    background-color: #f2f6f8;
 }
 
 .filter h2,
@@ -182,6 +259,7 @@ h1 {
 }
 
 .show {
+    font-family: "PT Sans", Arial, sans-serif;
     font-size: 13px;
     line-height: 18px;
     text-transform: uppercase;
@@ -228,6 +306,10 @@ h1 {
 
 .features-item a:hover {
     background-color: rgba(0,0,0, 0.2);
+}
+
+.features-item a:active {
+    background-color: rgba(0,0,0, 0.3);
 }
 
 .materials,
@@ -277,17 +359,21 @@ h1 {
     background-color: #ca2c37;    ;
 }
 
+.features-slider a:active {
+    background-color: #ba2732;
+}
+
 .control-button {
     font-size: 0px;
     background: #32425c no-repeat;
 }
 
  button .back {  
-    background: url("img/icon-left.svg");
+    background: url("../img/icon-left.svg");
 }
 
 button .forward {
-    background: url("img/icon-right.svg");
+    background: url("../img/icon-right.svg");
 }
 
 .section-header h2 {
@@ -320,7 +406,7 @@ button .forward {
 .old-price {
     font-size: 17px;
     line-height: 18px;
-    color: #a9a9a9;
+    color: #999999;
     text-decoration: line-through;
 }
 
@@ -330,7 +416,7 @@ button .forward {
     color: #ffffff;
     
     background-color: #ee3643;
-    background-image: url("img/item-button.svg") no-repeat;
+    background: url("../img/item-button.svg") no-repeat;
 }
 
 .product-active {
@@ -338,10 +424,16 @@ button .forward {
     line-height: 18px;
 }
 
+.product-new {
+    background: url("../img/new flag.png") no-repeat;
+}
+
 .product-active .buy {
+    font-family: "Cuprum", "PT Sans", Arial, sans-serif;
     color: #ffffff;
 
     background-color: #63a63e;
+    background: url("../img/cart-icon.svg") 0.3 no-repeat;
 }
 
 .product-active .get-bookmark {
@@ -353,10 +445,20 @@ button .forward {
 
 .product-active .buy:hover {
     background-color: #5fbb2d;
+    opacity: 1;
+}
+
+.product-active .buy:active {
+    background-color: #518534;
+    opacity: 1;
 }
 
 .product-active .get-bookmark:hover  {
     border: 3px solid #32425c;
+}
+
+.product-active .get-bookmark:active  {
+    opacity: 0.3;
 }
 
 .pagination {
@@ -423,6 +525,7 @@ button .forward {
     font-size: 30px;
     line-height: 30px;
     color:#000000;
+    font-weight: normal;
     text-transform: uppercase;
 }
 
@@ -441,6 +544,10 @@ button .forward {
     text-transform: uppercase;
 
     background-color: #ee3643;
+}
+
+.footer-page {
+    background-color: #32425c;
 }
 
 .footer-top ul {
@@ -463,6 +570,18 @@ button .forward {
     text-decoration: underline;
 }
 
+.footer-main-nav a:active {
+    color: rgba(241, 245, 247, 0.5);
+}
+
+.footer-catalog-nav a:active {
+    color:rgba(255, 209, 128, 0.5);
+}
+
+.footer-contacts:active {
+    color: #ee3643;
+}
+
 .footer-address {
     font-size: 18px;
     line-height: 24px;
@@ -481,6 +600,28 @@ button .forward {
 
 .icon-list {
     font-size: 0px;
+    background-color: #212a3a;
+}
+
+.vk-icon:hover,
+.vk-icon:active,
+.fb-icon:hover,
+.fb-icon:active,
+.insta-icon:hover,
+.insta-icon:active {
+    background-color: #ee3643;
+}
+
+.vk-icon{
+    background: url("../img/icon-vk.svg") no-repeat;
+}
+
+.fb-icon{
+    background: url("../img/icon-fb.svg") no-repeat;
+}
+
+.insta-icon{
+    background: url("../img/icon-insta.svg") no-repeat;
 }
 
 .footer-contacts {
@@ -556,4 +697,10 @@ label .title-form {
     color: #000000;
 
     background-color: #ffffff;
+}
+
+.login-popup,
+.map-popup,
+.basket-popup {
+    display:none;
 }
