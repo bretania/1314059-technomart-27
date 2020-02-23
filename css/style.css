@@ -2,7 +2,6 @@ body {
     margin: 0 auto;
     padding: 0;
   
-    width: 1200px;
     font-family: "Cuprum", "PT Sans", Arial, sans-serif;
     font-size: 14px;
     line-height: 24px;
@@ -1498,7 +1497,6 @@ input[type=radio]:disabled+label {
 }
 
 .services-list li{
-    padding-top: 15px;
     padding-bottom: 15px;
     padding-left:22px;
     padding-top: 21px;
@@ -1798,8 +1796,9 @@ input[type=radio]:disabled+label {
     justify-content: center;
     top:50%;
     left:50%;
-    margin-left:310px;
+    margin-left:-310px;
     width: 620px;
+    z-index:10;
     background-color:#ffffff;
     box-shadow: 0 20px 20px 0px #767d8b;
     border-top:8px solid #ee3643;
