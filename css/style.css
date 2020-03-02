@@ -24,7 +24,7 @@ img {
     justify-content:center;
     flex-wrap: wrap;
 
-    width:100%;
+    min-width:940px;
 
     background: #f4f7f9;
 }
@@ -247,7 +247,9 @@ img {
 }
 
 .basket:active,
-.bookmark:active {
+.bookmark:active,
+.basket:focus,
+.bookmark:focus {
     color: rgba(255,255,255, 0.6);
     background-color: #161d29;
 }
@@ -585,7 +587,7 @@ img {
     flex-wrap:wrap;
     justify-content: center;
 
-    width:100%;
+    min-width: 940px;
 }
 
 .catalog,
@@ -705,6 +707,7 @@ h1 {
     font-size: 13px;
     line-height: 18px;
     text-transform: uppercase;
+    font-weight: normal;
 
     background-color: #f7f3ec;
 }
@@ -870,7 +873,6 @@ h1 {
     cursor: pointer;
 }
 
-
 .filter-manufacturer li,
 .filter-power li {
     position: relative;
@@ -882,15 +884,7 @@ h1 {
     margin-bottom: 0;
 }
 
-input[type=checkbox] {
-    display: none;
-}
-
-input[type=radio] {
-    display: none;
-}
-
-.filter-manufacturer label::after{
+.filter-manufacturer label::before {
     display: inline-block;
     position: absolute;
     left: 0;
@@ -908,7 +902,7 @@ input[type=radio] {
     border-radius: 5px;
 }
 
-input[type=checkbox]:checked+label::before {
+input[type=checkbox]:checked+label::after {
     position: absolute;
     top:-8px;
     left:8px;
@@ -925,7 +919,7 @@ input[type=checkbox]:checked+label::before {
     box-shadow:
         2px 2px 0 0 #ffffff,
         inset -2px -2px 0 0 #ffffff;
-    transform: rotate(45deg);    
+    transform: rotate(45deg);
 }
 
 .filter-power label::before {
@@ -946,13 +940,14 @@ input[type=checkbox]:checked+label::before {
     border:4px solid #c5c5c5;
 }
 
-input[type=checkbox]:hover+label::after,
-input[type=checkbox]:checked:hover+label::before,
+input[type=checkbox]:hover+label::before,
+input[type=checkbox]:checked:hover+label::after,
 input[type=radio]:hover+label::before {
     border-color: #b5b5b5;
 }
 
-input[type=radio]:checked+label::before {
+input[type=radio]:checked+label::before,
+input[type=radio]:focus+label::before {
     display: inline-block;
     position: absolute;
     left: 3px;
@@ -987,6 +982,11 @@ input[type=radio]:checked:disabled+label::before{
 input[type=checkbox]:disabled+label,
 input[type=radio]:disabled+label {
     color:rgba(0,0,0, 0.4);
+}
+
+input[type=checkbox]:focus+label::before,
+input[type=radio]:focus+label::before {
+    outline: rgb(59, 153, 252) auto 5px;
 }
 
 .show {
@@ -1188,7 +1188,7 @@ input[type=radio]:disabled+label {
     right:43px;
 }
 
-.flag-new {
+.new::after {
     position: absolute;
     top: 0px;
     right: 0px;
@@ -1199,6 +1199,7 @@ input[type=radio]:disabled+label {
     z-index:11;
     
     font-size:0px;
+    content:"новинка";
 
     background: url("../img/new flag.png") no-repeat 0 0;
 }
@@ -1298,7 +1299,7 @@ input[type=radio]:disabled+label {
     background-color: #ba2732;
 }
 
-.slider-controls {
+.slider-arrows {
   display:flex;
   flex-direction:row;
   justify-content: space-between;
@@ -1314,7 +1315,7 @@ input[type=radio]:disabled+label {
   cursor: pointer;
 }
 
-.slider-controls label {
+.slider-arrows button {
     display: inline-block;
     vertical-align: top;
 
@@ -1339,27 +1340,54 @@ input[type=radio]:disabled+label {
     background: url("../img/icon-right.svg") no-repeat;
 }
 
-#perforator {
+.back:focus,
+.forward:focus {
+    outline: rgb(59, 153, 252) auto 5px;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 25px;
+    left: 297px;
+    z-index: 11;
+    
+    font-size: 0;
+  }
+
+.slider-controls label {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-right: 10px;
+  
+    vertical-align: top;
+  
+    background-color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+#perforator,
+#drill {
     display:none;
 }
 
-#slide-1:checked ~ .slider #perforator,
+#slide-1:checked ~ .slider #drill,
 #slide-2:checked ~ .slider #perforator {
   display: block;
 }
 
-#slide-1:checked ~ .slider #drill,
-#slide-2:checked ~ .slider #drill {
-  display: none;
+#slide-1:checked ~ .slider label[for="slide-1"],
+#slide-2:checked ~ .slider label[for="slide-2"] {
+  background-color: #ee3643;
 }
 
-#slide-1 ~ .slider,
-#slide-2 ~ .slider {
+#slide-1:checked ~ .slider {
   background-color: #dabdab; 
   background-image: url("../img/index-slide-foto-1.jpg");
 }
 
-#slide-1:checked ~ .slider,
 #slide-2:checked ~ .slider {
   background-color: #dabdab;  
   background-image: url("../img/index-slide-foto-2.jpg");
@@ -1371,7 +1399,7 @@ input[type=radio]:disabled+label {
     flex-wrap: wrap;
     justify-content: center;
 
-    width:100%;
+    width:100%; 
 }
 
 .section-part {
@@ -1544,7 +1572,7 @@ input[type=radio]:disabled+label {
     top: 1px;
     left: 1px;
 
-    padding: 40px 0px;
+    padding: 40px 0;
     
     width: 216px;
     height: 88px;
@@ -1566,11 +1594,13 @@ input[type=radio]:disabled+label {
     padding: 7px 0;
 
     width: 129px;
-    
+    height:auto;
+
     font-family: "Cuprum", "PT Sans", Arial, sans-serif;
     color: #ffffff;
     text-decoration: none;
     text-transform: uppercase;
+    text-align:center;
 
     background-color: #63a63e;
     border: 3px solid #63a63e;
@@ -1739,6 +1769,8 @@ input[type=radio]:disabled+label {
 
     margin: auto;
 
+    min-width:940px;
+
     background: #f2f6f8;
 }
 
@@ -1832,7 +1864,7 @@ input[type=radio]:disabled+label {
     
     z-index:10;
 
-    content:url("../img/Layer.png") ;
+    content:url("../img/layer.png") ;
 }
 
 .services-controls {
@@ -1844,6 +1876,8 @@ input[type=radio]:disabled+label {
 
     width: 240px;
     height:190px;
+
+    list-style:none;
 }
 
 .services-controls label{
@@ -1869,6 +1903,7 @@ input[type=radio]:disabled+label {
 
     background-color: #293449;
 }
+
 .services-slider ul {
    margin:0px;
    padding:0px;
@@ -1926,11 +1961,8 @@ input[type=radio]:disabled+label {
 
 #service-1:checked ~ .services-slider #service-delivery,
 #service-2:checked ~ .services-slider #service-guarantee,
-#service-3:checked ~ .services-slider #service-credit,
-#service-1:focus ~ .services-slider #service-delivery,
-#service-2:focus ~ .services-slider #service-guarantee,
-#service-3:focus ~ .services-slider #service-credit {
-  display: block;
+#service-3:checked ~ .services-slider #service-credit{
+    display:block;
 }
 
 #service-1:checked ~ .services-slider label[for="service-1"],
@@ -2026,18 +2058,14 @@ input[type=radio]:disabled+label {
 }
 
 .button-map {
-    align-self: flex-end;
-
     margin-top:5px;
-    padding:0px;
-
+    padding-left:61px;
+    padding-right:61px;
     width: 100%;
-    height: 38px;
-
-    border: none;
 }
 
 .footer {
+    min-width:940px;
     background-color: #32425c;
 }
 

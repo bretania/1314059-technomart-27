@@ -77,8 +77,7 @@
       <section class="features">
         <h2 class="visually-hidden">интерактивный блок</h2>
         <div class="features-column left"> 
-          <section class="features-item materials">
-            <div class="flag-new">новинка</div>
+          <section class="features-item materials new">
             <h3>Материалы</h3>
             <img src="img/icon-1.svg" width="44" height="65" alt="Иконка раздела Материалы">
             <a href="#">На любой вкус</a>
@@ -90,8 +89,8 @@
             <a href="#">На все случаи</a>
           </section>
           
-          <input class="visually-hidden" type="checkbox" id="slide-1" name="toggle">
-          <input class="visually-hidden" type="checkbox" id="slide-2" name="toggle">
+          <input class="visually-hidden" type="radio" id="slide-1" name="toggle" checked>
+          <input class="visually-hidden" type="radio" id="slide-2" name="toggle">
           
           <section class="slider">
             <ul class="slider-list">
@@ -108,10 +107,14 @@
                 </div>
               </li>
             </ul>
+            <div class="slider-arrows">
+              <button class="back" type="button">Назад</button>
+              <button class="forward" type="button">Вперед</button>
+            </div>
             <a class="button button-slider" href="catalog.html">Открыть каталог</a>
             <div class="slider-controls">
-              <label for="slide-1" class="back">Назад</label>
-              <label for="slide-2" class="forward">Вперед</label>
+              <label for="slide-1">Дрели</label>
+              <label for="slide-2">Перфораторы</label>
             </div>
           </section>
         </div>
@@ -147,13 +150,13 @@
           <div class="product-list">
             <article class="product-item">
               <div class="product-active">
-                <button class="buy" type="button">
+                <a class="buy" href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><circle fill="#ffffff" cx="4.5" cy="13.5" r="1.5"/><circle fill="#ffffff" cx="12.5" cy="13.5" r="1.5"/><path fill="#ffffff" d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z"/></svg>
-                  Купить</button>
-                <button class="get-bookmark" type="button">В закладки</button>
+                  Купить</a>
+                <a class="get-bookmark" href="#">В закладки</a>
               </div>
               <a href="#">
-                <img src="img/catalog-foto-Perforator_1.jpg" alt="Перфоратор Bosch BFG 9000" width="217" height="170">
+                <img src="img/catalog-foto-perforator_1.jpg" alt="Перфоратор Bosch BFG 9000" width="217" height="170">
                 <h3>Перфоратор BOSCH BFG 9000</h3>
                 <p class="old-price">32500 P.</p>
                 <p class="new-price">25500 P.</p>
@@ -162,13 +165,13 @@
 
             <article class="product-item">
               <div class="product-active">
-                <button class="buy" type="button">
+                <a class="buy" href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><circle fill="#ffffff" cx="4.5" cy="13.5" r="1.5"/><circle fill="#ffffff" cx="12.5" cy="13.5" r="1.5"/><path fill="#ffffff" d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z"/></svg>
-                  Купить</button>
-                <button class="get-bookmark" type="button">В закладки</button>
+                  Купить</a>
+                <a class="get-bookmark" href="#">В закладки</a>
               </div>
               <a href="#">
-                <img src="img/catalog-foto-Perforator_2.jpg" alt="Перфоратор Bosch BFG 3000" width="218" height="170">
+                <img src="img/catalog-foto-perforator_2.jpg" alt="Перфоратор Bosch BFG 3000" width="218" height="170">
                 <h3>Перфоратор BOSCH BFG 3000</h3>
                 <p class="old-price">22500 P.</p>
                 <p class="new-price">15500 P.</p>
@@ -177,29 +180,28 @@
 
             <article class="product-item">
               <div class="product-active">
-                <button class="buy" type="button">
+                <a class="buy" href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><circle fill="#ffffff" cx="4.5" cy="13.5" r="1.5"/><circle fill="#ffffff" cx="12.5" cy="13.5" r="1.5"/><path fill="#ffffff" d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z"/></svg>
-                  Купить</button>
-                <button class="get-bookmark" type="button">В закладки</button>
+                  Купить</a>
+                <a class="get-bookmark" href="#">В закладки</a>
               </div>
               <a href="#">
-                <img src="img/catalog-foto-Perforator_3.jpg" alt="Перфоратор Bosch BFG 6000" width="218" height="170">
+                <img src="img/catalog-foto-perforator_3.jpg" alt="Перфоратор Bosch BFG 6000" width="218" height="170">
                 <h3>Перфоратор BOSCH BFG 6000</h3>
                 <p class="old-price">30500 P.</p>
                 <p class="new-price">25500 P.</p>
               </a>
             </article>
 
-            <article class="product-item">
-              <div class="flag-new">новинка</div>
+            <article class="product-item new">
               <div class="product-active">
-                <button class="buy" type="button">
+                <a class="buy" href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15"><circle fill="#ffffff" cx="4.5" cy="13.5" r="1.5"/><circle fill="#ffffff" cx="12.5" cy="13.5" r="1.5"/><path fill="#ffffff" d="M15 2H4.07l-.422-2H0v2h2.031l1.985 9H15V9H9.441L15 6.951z"/></svg>
-                  Купить</button>
-                <button class="get-bookmark" type="button">В закладки</button>
+                  Купить</a>
+                <a class="get-bookmark" href="#">В закладки</a>
               </div>
               <a href="#">
-                <img src="img/catalog-foto-Perforator_4.jpg" alt="Перфоратор Bosch BFG 2000" width="218" height="170">
+                <img src="img/catalog-foto-perforator_4.jpg" alt="Перфоратор Bosch BFG 2000" width="218" height="170">
                 <h3>Перфоратор BOSCH BFG 2000</h3>
                 <p class="new-price one-price">12500 P.</p>
               </a>
@@ -221,31 +223,31 @@
             </a>
             
             <a class="manufacturer-item" href="#">
-              <img src="img/logo-Makita.png" width="123" height="40" alt="Логотип фирмы Макита">
+              <img src="img/logo-makita.png" width="123" height="40" alt="Логотип фирмы Макита">
             </a>
 
             <a class="manufacturer-item" href="#">
-              <img src="img/logo-DeWALT.png" width="146" height="44" alt="Логотип фирмы Деволт">
+              <img src="img/logo-dewalt.png" width="146" height="44" alt="Логотип фирмы Деволт">
             </a>
 
             <a class="manufacturer-item" href="#">
-              <img src="img/logo-Interskol.png" width="220" height="88" alt="Логотип фирмы Интерскол">
+              <img src="img/logo-interskol.png" width="220" height="88" alt="Логотип фирмы Интерскол">
             </a>
 
             <a class="manufacturer-item" href="#">
-              <img src="img/logo-Hitachi.png" width="169" height="31" alt="Логотип фирмы Хитачи">
+              <img src="img/logo-hitachi.png" width="169" height="31" alt="Логотип фирмы Хитачи">
             </a>
 
             <a class="manufacturer-item" href="#">
-              <img src="img/logo-LG.png" width="121" height="73" alt="Логотип фирмы ЭлДжи">
+              <img src="img/logo-lg.png" width="121" height="73" alt="Логотип фирмы ЭлДжи">
             </a>
 
             <a class="manufacturer-item" href="#">
-              <img src="img/logo-AEG.png" width="151" height="96" alt="Логотип фирмы AEG">
+              <img src="img/logo-aeg.png" width="151" height="96" alt="Логотип фирмы AEG">
             </a>
 
             <a class="manufacturer-item" href="#">
-              <img src="img/logo-Metabo.png" width="204" height="69" alt="Логотип фирмы Metabo">
+              <img src="img/logo-metabo.png" width="204" height="69" alt="Логотип фирмы Metabo">
             </a>
           </div>
         </div>
@@ -258,7 +260,7 @@
           <input class="visually-hidden" type="radio" id="service-1" name="toggle-1" checked>
           <input class="visually-hidden" type="radio" id="service-2" name="toggle-1">
           <input class="visually-hidden" type="radio" id="service-3" name="toggle-1">
-          <div class="services-slider">
+            <div class="services-slider">
             <div class="services-controls">
               <label for="service-1">Доставка</label>
               <label for="service-2">Гарантия</label>
@@ -323,7 +325,7 @@
             <figure class="map">
               <a class="map-image" href="#"><img src="img/index-map.png" width="300" height="160" alt="Карта офиса ул. Б.Конюшенная, д.19/8"></a>
             </figure>
-            <button class="button button-map" type="button">Заблудились? Напишите нам!</button>
+            <a class="button button-map" href="#">Заблудились? Напишите нам!</a>
           </section>
         </div>
       </div>
@@ -381,15 +383,15 @@
       <div class="login-popup-contant">
         <p class="form">
           <label for="name-feetback">Ваше имя:</label>
-          <input id="name-feetback" name="name-feetback" type="text" placeholder="Имя Фамилия">
+          <input id="name-feetback" name="name-feetback" type="text" placeholder="Имя Фамилия" required>
         </p>
         <p class="form">
           <label for="email-feetback">Ваш e-mail:</label>
-          <input id="email-feetback" name="email-feetback" type="email" placeholder="email@example.com">
+          <input id="email-feetback" name="email-feetback" type="email" placeholder="email@example.com" required>
         </p>
         <p class="info-form">
           <label for="text-feetback">Текст письма:</label>
-          <textarea class="input-area" id="text-feetback" name="text-feetback" rows="10">В свободной форме</textarea>
+          <textarea class="input-area" id="text-feetback" name="text-feetback" rows="10" required>В свободной форме</textarea>
         </p>
       </div>
       <div class="login-bottom">
@@ -419,7 +421,7 @@
     </form>
 
     <script src="js/scriptmini.js"></script> 
-    <script src="js/scriptCatalogmini.js"></script>
+    <script src="js/scriptсatalogmini.js"></script>
 
   </body>
 </html>
